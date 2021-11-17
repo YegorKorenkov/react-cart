@@ -1,0 +1,173 @@
+.cart {
+  margin-top: 50px;
+  border-radius: 20px;
+  background-color: #fff;
+  min-width: 800px;
+
+  button {
+    border-radius: 12px;
+    font-weight: 500;
+  }
+
+  &__return {
+    @include flex($align: center, $justify: flex-end);
+    margin: 20px 20px 20px;
+
+    &__btn {
+      @include flex($align: center, $justify: center);
+      padding: 5px 10px;
+      background-color: #fff;
+      border: 1px solid $color-blue;
+      color: $color-blue;
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+
+      svg {
+        path {
+          fill: $color-blue;
+          transition: fill 0.2s ease-in-out;
+        }
+      }
+
+      &:hover {
+        background-color: $color-blue;
+        color: #fff;
+
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+
+    &__btn_disabled {
+      border: 1px solid $color-purple-grey;
+      color: $color-purple-grey;
+      cursor: auto;
+
+      svg {
+        path {
+          fill: $color-purple-grey;
+        }
+      }
+
+      &:hover {
+        background-color: #fff;
+        color: $color-purple-grey;
+
+        svg {
+          path {
+            fill: $color-purple-grey;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    @include flex($align: center, $justify: space-between);
+    padding: 20px 30px;
+    border-bottom: 1px solid $color-light-grey;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    &__name {
+      width: 90px;
+    }
+
+    &__amount {
+      width: 200px;
+      input {
+        box-shadow: 2px 2px 12px rgba(111, 116, 162, 0.1);
+        width: 50px;
+        border-radius: 12px;
+        border: 1px solid $color-light-grey;
+        padding: 5px 10px;
+        margin: 0 20px;
+        font-size: 14px;
+        line-height: 24px;
+
+        &:focus {
+          border: 1px solid #144dde;
+        }
+      }
+
+      button {
+        background-color: #144dde;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+
+        border: 0;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          background-color: $color-dark-blue;
+        }
+      }
+    }
+
+    &__price {
+      width: 180px;
+    }
+
+    &__delete-btn {
+      padding: 10px 10px;
+      background-color: #fff;
+      color: $color-pink;
+      border-radius: 12px;
+      border: 1px solid $color-pink;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $color-pink;
+        color: #fff;
+      }
+    }
+  }
+
+  &__footer {
+    @include flex($align: flex-end, $justify: center, $direction: column);
+    margin: 20px 40px 20px;
+
+    &__price {
+      @include flex($align: flex-end, $justify: center, $direction: column);
+
+      span {
+        font-size: 20px;
+        margin: 5px 0;
+
+        &:last-of-type {
+          font-weight: 700;
+        }
+      }
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-weight: 18px;
+      background-color: $color-blue;
+      color: #fff;
+      border: 0;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $color-dark-blue;
+      }
+    }
+  }
+
+  &__empty {
+    @include flex($align: center, $justify: center);
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 26px;
+    }
+  }
+}
